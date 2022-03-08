@@ -9,14 +9,11 @@ def search_video(kw, limit=20, region="BR", df=True):
         data = pd.json_normalize(videosSearch.result()["result"])
         data['viewCount'] = data['viewCount.text'].str.replace(" views", "")
         data['viewCount'] = data['viewCount'].str.replace(",", "").astype(int)
-        #data['descriptionSnippet'] = data['descriptionSnippet'].apply(lambda j: j[0]["text"] if len(j) > 0 else "")
         cols = [
             'title',
             'viewCount',
             'channel.name',
             'duration' ,
-            #'publishedTime',
-            #'descriptionSnippet',
             'link',
             ]
         return data.loc[:, cols].sort_values("viewCount", ascending=False)
