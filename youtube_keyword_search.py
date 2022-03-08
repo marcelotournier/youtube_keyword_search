@@ -23,7 +23,7 @@ def search_video(kw, limit=20, region="BR", df=True):
 st.title('Youtube keyword search')
 
 keywords = st.text_input('Youtube keywords', 'como trabalhar nos estados unidos')
-row_size = st.text_input('Max Results (more = longer wait times)', '20')
+row_size = st.text_input('Max Results (maximum = 20)', '20')
 
 data_load_state = st.text('Searching...')
 data = search_video(keywords, limit=int(row_size))
