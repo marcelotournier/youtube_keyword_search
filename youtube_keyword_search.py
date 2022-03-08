@@ -26,7 +26,7 @@ keywords = st.text_input('Youtube keywords', 'como trabalhar nos estados unidos'
 row_size = st.text_input('Max Results (more = longer wait times)', '20')
 
 data_load_state = st.text('Searching...')
-data = search_video(keywords, limit=row_size)
+data = search_video(keywords, limit=int(row_size))
 data
 data_load_state.text("Done!")
 
