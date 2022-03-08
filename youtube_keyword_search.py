@@ -20,7 +20,7 @@ def search_video(kw, limit=20, region="BR", df=True):
     else:
         return videosSearch.result()["result"]
 
-st.title('Youtube search per keywords')
+st.title('Youtube keyword search')
 
 keywords = st.text_input('Youtube keywords', 'como trabalhar nos estados unidos')
 
